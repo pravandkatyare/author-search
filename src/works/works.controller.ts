@@ -8,8 +8,7 @@ export class WorksController {
        
     // Find Author by Name
     @Get('/author/:key')
-    findAuthor(@Param('key', new NameCheckPipe) key: string){
-        
-        return this.worksService.get(key)
+    async findAuthor(@Param('key', new NameCheckPipe) key: string){
+        await return this.worksService.get(key)
     }
 }
